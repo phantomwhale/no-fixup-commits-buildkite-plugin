@@ -1,0 +1,7 @@
+name: No fixup commits
+description: Fail if fixup commits detected on branch
+author: https://github.com/phantomwhale
+requirements: []
+configuration:
+  properties: {}
+  additionalProperties: false

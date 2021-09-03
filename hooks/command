@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "--- Searching for fixup commits"
+#echo "$BUILDKITE_BUILD_CHECKOUT_PATH"
+
+if git log --pretty=format:%s $(git merge-base @ master)..HEAD | egrep '^fixup!|^amend!' ; then
+  echo "^^^ +++"
+  echo "+++ :warning: Fixup commits detected!"
+  exit 1
+fi
